@@ -1,5 +1,5 @@
 <template>
-	<main class="p-relative">
+	<main class="p-relative bg-style">
 		<HeaderComp />
 	</main>
 	<router-view />
