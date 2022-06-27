@@ -1,0 +1,41 @@
+@font-face {
+	font-family: "Bellefair";
+	src: url("../fonts/Bellefair-Regular.eot");
+	src: url("../fonts/Bellefair-Regular.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/Bellefair-Regular.woff2") format("woff2"),
+		url("../fonts/Bellefair-Regular.woff") format("woff"),
+		url("../fonts/Bellefair-Regular.ttf") format("truetype"),
+		url("../fonts/Bellefair-Regular.svg#Bellefair-Regular") format("svg");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Barlow-reg";
+	src: url("../fonts/BarlowCondensed-Regular.eot");
+	src: url("../fonts/BarlowCondensed-Regular.eot?#iefix")
+			format("embedded-opentype"),
+		url("../fonts/BarlowCondensed-Regular.woff2") format("woff2"),
+		url("../fonts/BarlowCondensed-Regular.woff") format("woff"),
+		url("../fonts/BarlowCondensed-Regular.ttf") format("truetype"),
+		url("../fonts/BarlowCondensed-Regular.svg#BarlowCondensed-Regular")
+			format("svg");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Barlow-bold";
+	src: url("../fonts/BarlowCondensed-Bold.eot");
+	src: url("../fonts/BarlowCondensed-Bold.eot?#iefix")
+			format("embedded-opentype"),
+		url("../fonts/BarlowCondensed-Bold.woff2") format("woff2"),
+		url("../fonts/BarlowCondensed-Bold.woff") format("woff"),
+		url("../fonts/BarlowCondensed-Bold.ttf") format("truetype"),
+		url("../fonts/BarlowCondensed-Bold.svg#BarlowCondensed-Bold") format("svg");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
