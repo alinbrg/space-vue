@@ -1,8 +1,8 @@
 <template>
-	<main class="p-relative bg-style">
+	<main>
 		<HeaderComp />
+		<router-view />
 	</main>
-	<router-view />
 </template>
 <script>
 import HeaderComp from "@/components/HeaderComp.vue";
