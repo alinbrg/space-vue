@@ -188,20 +188,23 @@ main {
 /* COMMENT main section index */
 
 .destination-content h3,
-.crew-content h3 {
+.crew-content h3,
+.technology-section h3 {
 	font-size: clamp(16px, 2.4vw, 28px);
 	margin-bottom: 62px;
 	color: var(--white);
 	text-transform: uppercase;
 }
 .destination-content h3 span,
+.technology-section h3 span,
 .crew-content h3 span {
 	opacity: 0.25;
 }
 
 @media (max-width: 768px) {
 	.destination-content h3,
-	.crew-content h3 {
+	.crew-content h3,
+	.technology-section h3 {
 		margin-bottom: 30px;
 		text-align: right;
 	}
@@ -242,4 +245,55 @@ main {
 
 section {
 	overflow-x: hidden;
+}
+.technology-section .swiper {
+	flex-direction: row-reverse;
+}
+.technology-section .swiper-wrapper {
+	width: calc(100% - 100px) !important;
+}
+.technology-section .swiper-pagination {
+	display: flex;
+	flex-direction: column;
+	width: 100px !important;
+	position: static !important;
+}
+.technology-section .swiper-pagination span {
+	width: 70px;
+	height: 70px;
+	/* background-color: white; */
+	color: white;
+	display: flex;
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	margin-bottom: 20px !important;
+}
+.technology-section .swiper-pagination-bullet.swiper-pagination-bullet-active {
+	background-color: white;
+	color: black;
+}
+
+@media (max-width: 1025px) {
+	.technology-section .swiper {
+		flex-direction: column;
+	}
+	.technology-section .swiper-pagination {
+		flex-direction: row;
+		width: 100% !important;
+		justify-content: center;
+	}
+	.technology-section .swiper-wrapper {
+		width: 100% !important;
+	}
+	.technology-section .swiper-slide {
+		flex-direction: column-reverse;
+	}
+}
+@media (max-width: 768px) {
+	.technology-section .swiper-pagination span {
+		width: 40px;
+		height: 40px;
+	}
 }

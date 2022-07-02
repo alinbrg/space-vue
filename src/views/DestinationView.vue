@@ -7,10 +7,14 @@
 				<div class="dest-img">
 					<img
 						class="w-100"
-						src="../assets/img/destination/image-moon.png"
+						:src="destinations[0].images.webp"
 						:alt="destinations[0].name"
 					/>
-					<!-- :src="'.' + destinations[0].images.png" -->
+					<!-- <img
+						class="w-100"
+						src="../assets/img/destination/image-moon.png"
+						:alt="destinations[0].name"
+					/> -->
 				</div>
 				<div class="dest-desc">
 					<div class="dest-options">

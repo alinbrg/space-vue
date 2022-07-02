@@ -19,14 +19,15 @@
 						<span class="d-block">{{ member.role }}</span>
 						<h2>{{ member.name }}</h2>
 						<p>{{ member.bio }}</p>
+						<!-- {{ member.images.png }} -->
 					</div>
 
 					<div class="crew-img">
-						<!-- <img :src="'.' + member.images.png" :alt="member.name" /> -->
-						<img
+						<img :src="member.images.webp" :alt="member.name" />
+						<!-- <img
 							src="../assets/img/crew/image-douglas-hurley.png"
 							:alt="member.name"
-						/>
+						/> -->
 					</div>
 				</swiper-slide>
 			</swiper>
@@ -54,16 +55,8 @@ export default {
 	},
 	setup() {
 		const crew = json.crew;
-		const onSwiper = (swiper) => {
-			console.log(swiper, crew);
-		};
-		const onSlideChange = () => {
-			console.log("slide change");
-		};
 
 		return {
-			onSwiper,
-			onSlideChange,
 			modules: [Pagination, Scrollbar, A11y],
 			crew,
 		};
