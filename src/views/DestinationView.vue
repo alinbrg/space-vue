@@ -3,71 +3,88 @@
 		<div class="destination-content">
 			<h3><span>01 </span>Pick your destination</h3>
 
-			<div class="select-dest d-flex justify-content-between">
-				<div class="dest-img">
-					<img
-						class="w-100"
-						:src="destinations[0].images.webp"
-						:alt="destinations[0].name"
-					/>
-					<!-- <img
-						class="w-100"
-						src="../assets/img/destination/image-moon.png"
-						:alt="destinations[0].name"
-					/> -->
-				</div>
-				<div class="dest-desc">
-					<div class="dest-options">
-						<ul class="d-flex">
-							<li
-								v-for="(destination, index) in destinations"
-								:key="index"
-								@click="changeInfoOnClick(destination, $event, index)"
-							>
-								{{ destination.name }}
-							</li>
-						</ul>
-					</div>
-					<div class="dest-details">
-						<h2>{{ destinations[0].name }}</h2>
-						<p>
-							{{ destinations[0].description }}
-						</p>
-					</div>
-					<div class="dest-stat d-flex align-items-center">
-						<div>
-							<span class="d-block">AVG. DISTANCE</span>
-							<span class="num d-block">{{ destinations[0].distance }}</span>
+			<swiper
+				:modules="modules"
+				:slides-per-view="1"
+				:space-between="100"
+				:pagination="pagination"
+				class="d-flex justify-content-between align-items-center"
+			>
+				<swiper-slide
+					v-for="(dest, index) in destinations"
+					:key="index"
+					class="d-flex justify-content-between align-items-center"
+				>
+					<div class="select-dest d-flex justify-content-between">
+						<div class="dest-img">
+							<img class="w-100" :src="dest.images.webp" :alt="dest.name" />
+							<!-- <img
+								class="w-100"
+								src="../assets/img/destination/image-moon.png"
+								:alt="dest.name"
+							/> -->
 						</div>
-						<div>
-							<span class="d-block">Est. travel time</span>
-							<span class="num d-block">{{ destinations[0].travel }}</span>
+						<div class="dest-desc">
+							<div class="dest-details">
+								<h2>{{ dest.name }}</h2>
+								<p>
+									{{ dest.description }}
+								</p>
+							</div>
+							<div class="dest-stat d-flex align-items-center">
+								<div>
+									<span class="d-block">AVG. DISTANCE</span>
+									<span class="num d-block">{{ dest.distance }}</span>
+								</div>
+								<div>
+									<span class="d-block">Est. travel time</span>
+									<span class="num d-block">{{ dest.travel }}</span>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
-			</div>
+				</swiper-slide>
+			</swiper>
 		</div>
 	</section>
 </template>
 
 <script>
 import json from "../assets/js/data.json";
+// import Swiper core and required modules
+import { Pagination, Scrollbar, A11y } from "swiper";
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from "swiper/vue";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+
+// Import Swiper styles
 export default {
-	name: "DestinationView",
-
-	data() {
-		return {
-			destinations: json.destinations,
-			isActive: false,
-		};
+	components: {
+		Swiper,
+		SwiperSlide,
 	},
-	methods: {
-		changeInfoOnClick(destination, event) {
-			let target = event.target;
-
-			console.log(destination, target);
-			return destination;
-		},
+	setup() {
+		const destinations = json.destinations;
+		const destNames = destinations.map((el) => el.name);
+		const isActive = false;
+		return {
+			pagination: {
+				clickable: true,
+				renderBullet: function (index, className) {
+					console.log(destNames, destinations);
+					return (
+						'<span class="' + className + '">' + destNames[index] + "</span>"
+					);
+				},
+			},
+			modules: [Pagination, Scrollbar, A11y],
+			isActive,
+			destinations,
+			destNames,
+		};
 	},
 };
 </script>
@@ -99,25 +116,7 @@ img {
 .dest-desc ul {
 	margin-bottom: 40px;
 }
-.dest-desc li {
-	font-size: clamp(14px, 0.24vw, 16px);
-	margin-right: 22px;
-	text-transform: capitalize;
-	position: relative;
-	cursor: pointer;
-}
-.dest-desc li:last-child {
-	margin-right: 0;
-}
-.dest-desc li.active::after {
-	content: "";
-	width: 80%;
-	height: 3px;
-	position: absolute;
-	bottom: -10px;
-	background-color: var(--white);
-	left: 0;
-}
+
 .dest-desc h2 {
 	font-size: clamp(56px, 2.4vw, 100px);
 	text-transform: capitalize;

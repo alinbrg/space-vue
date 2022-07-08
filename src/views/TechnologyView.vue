@@ -7,8 +7,6 @@
 				:slides-per-view="1"
 				:space-between="100"
 				:pagination="pagination"
-				@swiper="onSwiper"
-				@slideChange="onSlideChange"
 				class="d-flex justify-content-between align-items-center"
 			>
 				<swiper-slide
@@ -36,9 +34,6 @@
 </template>
 
 <script>
-// export default {
-// 	name: "TechnologyView",
-// };
 import json from "../assets/js/data.json";
 // import Swiper core and required modules
 import { Pagination, Scrollbar, A11y } from "swiper";
