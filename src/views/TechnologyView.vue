@@ -21,7 +21,7 @@
 					</div>
 
 					<div class="tech-img">
-						<img :src="tech.images.webp" :alt="tech.name" />
+						<img :src="tech.images.portrait" :alt="tech.name" />
 						<!-- <img
 							src="../assets/img/technology/image-launch-vehicle-landscape.jpg"
 							:alt="tech.name"

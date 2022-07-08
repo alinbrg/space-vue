@@ -231,6 +231,8 @@ section {
 .destination-content .swiper-pagination {
 	width: unset !important;
 	right: 0 !important;
+	left: unset !important;
+	bottom: unset !important;
 	top: 0 !important;
 }
 .destination-content .swiper-pagination span {

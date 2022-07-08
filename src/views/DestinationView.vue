@@ -74,7 +74,7 @@ export default {
 			pagination: {
 				clickable: true,
 				renderBullet: function (index, className) {
-					console.log(destNames, destinations);
+					// console.log(destNames, destinations);
 					return (
 						'<span class="' + className + '">' + destNames[index] + "</span>"
 					);
